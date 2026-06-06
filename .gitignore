@@ -1,0 +1,8 @@
+.DS_Store
+**/.DS_Store
+# Material no usado por el sitio (queda solo en tu disco)
+Imagenes/
+videos de fondo/
+# Documentos internos (no publicar)
+notas-estetica.txt
+CONTEXTO.md
