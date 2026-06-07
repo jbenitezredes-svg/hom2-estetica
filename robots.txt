@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jbenitezredes-svg.github.io/hom2-estetica/sitemap.xml
