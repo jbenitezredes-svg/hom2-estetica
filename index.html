@@ -128,27 +128,25 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spa
 .nav.scrolled{background:rgba(20,19,21,.86);backdrop-filter:blur(10px);padding:14px 32px;box-shadow:0 1px 0 var(--line-soft)}
 
 /* ============ HERO ============ */
-.hero{position:relative;height:100svh;min-height:640px;display:flex;align-items:flex-end;overflow:hidden}
-.hero__video,.hero__video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__video::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(15,13,14,.5) 0%,rgba(15,13,14,.22) 30%,rgba(15,13,14,.62) 66%,rgba(15,13,14,.94) 100%);
-}
-.hero__inner{position:relative;z-index:2;width:100%;padding-bottom:15vh}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--bg);overflow:hidden;padding:120px 0 72px}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,84px);align-items:center;width:100%}
 .hero h1{
   color:var(--text);font-weight:300;
-  font-size:clamp(2.7rem,7vw,5.8rem);line-height:1.02;letter-spacing:-.005em;
-  margin:22px 0 0;max-width:16ch;
-  text-shadow:0 1px 2px rgba(0,0,0,.75), 0 3px 12px rgba(0,0,0,.7), 0 0 46px rgba(0,0,0,.55);
+  font-size:clamp(2.5rem,5.2vw,4.6rem);line-height:1.05;letter-spacing:-.005em;
+  margin:20px 0 0;max-width:14ch;
 }
 .hero h1 em{font-style:italic;color:var(--clay)}
-.hero .eyebrow{text-shadow:0 1px 6px rgba(0,0,0,.7)}
 .hero__sub{
-  color:rgba(242,239,233,.92);font-size:1.06rem;font-weight:300;
-  max-width:46ch;margin:26px 0 38px;line-height:1.7;
-  text-shadow:0 1px 8px rgba(0,0,0,.75);
+  color:var(--text-dim);font-size:1.06rem;font-weight:300;
+  max-width:44ch;margin:24px 0 36px;line-height:1.7;
 }
 .hero__actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero__media{justify-self:center;position:relative;width:100%}
+.hero__media video{
+  width:100%;max-width:360px;aspect-ratio:9/16;object-fit:cover;
+  border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);
+  display:block;margin:0 auto;
+}
 .hero__scroll{
   position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:5;
   font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,239,233,.7);
@@ -302,6 +300,10 @@ section{position:relative}
 /* ============ RESPONSIVE ============ */
 @media(max-width:980px){
   .about__grid,.cosmo__body,.contact__grid,.compl__grid{grid-template-columns:1fr}
+  .hero__grid{grid-template-columns:1fr;gap:44px}
+  .hero__media{order:-1}
+  .hero__media video{max-width:300px}
+  .hero{padding:108px 0 64px}
   .about__media img{height:440px}
   .serv__feat{grid-template-columns:1fr 1fr}
   .serv__list{grid-template-columns:1fr}
@@ -419,13 +421,8 @@ section{position:relative}
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
-  <div class="hero__video">
-    <video autoplay muted loop playsinline>
-      <source src="video/soprano-flor.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero__inner">
-    <div class="wrap reveal in">
+  <div class="wrap hero__grid">
+    <div class="hero__text reveal in">
       <p class="eyebrow">HOM · Temperley · Servicio unisex</p>
       <h1>Depilación <em>Soprano Ice</em> Original de Alma Láser</h1>
       <p class="hero__sub">Sistema aprobado por ANMAT, indoloro y altamente efectivo. Eliminá el vello de forma progresiva y segura. Servicio unisex.</p>
@@ -436,6 +433,11 @@ section{position:relative}
           Cómo llegar
         </a>
       </div>
+    </div>
+    <div class="hero__media reveal in" data-d="1">
+      <video autoplay muted loop playsinline>
+        <source src="video/soprano-flor.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
   <div class="hero__scroll">Descubrir</div>
