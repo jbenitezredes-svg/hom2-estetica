@@ -171,7 +171,9 @@ section{position:relative}
 /* ============ BAND (criolipólisis) ============ */
 .band{position:relative;height:78vh;min-height:520px;display:flex;align-items:center;overflow:hidden;color:var(--text)}
 .band video,.band__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,14,15,.82) 0%,rgba(16,14,15,.5) 55%,rgba(16,14,15,.3) 100%)}
+.band::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg, var(--bg) 0%, transparent 16%, transparent 72%, var(--bg) 100%),
+  linear-gradient(90deg,rgba(16,14,15,.82) 0%,rgba(16,14,15,.5) 55%,rgba(16,14,15,.3) 100%)}
 .band__c{position:relative;z-index:2;max-width:560px}
 .band__c .eyebrow{color:var(--clay)}
 .band__c h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:300;margin:16px 0 22px}
@@ -182,7 +184,9 @@ section{position:relative}
 .cosmo{background:var(--surface)}
 .cosmo__video{position:relative;height:62vh;min-height:440px;display:flex;align-items:center;overflow:hidden;color:var(--text)}
 .cosmo__video video,.cosmo__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cosmo__video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,14,.5),rgba(15,13,14,.66))}
+.cosmo__video::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg, var(--bg) 0%, transparent 22%, transparent 80%, var(--surface) 100%),
+  linear-gradient(180deg,rgba(15,13,14,.45),rgba(15,13,14,.62))}
 .cosmo__video .inner{position:relative;z-index:2}
 .cosmo__video h2{font-size:clamp(2.3rem,5vw,3.8rem);font-weight:300;margin:16px 0 18px}
 .cosmo__video h2 em{font-style:italic;color:var(--clay)}
@@ -308,8 +312,8 @@ section{position:relative}
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
   <div class="hero__video">
-    <video autoplay muted loop playsinline poster="video/depilacion-fondo.jpg">
-      <source src="video/depilacion-fondo.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline poster="video/soprano-fondo.jpg">
+      <source src="video/soprano-fondo.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero__inner">
